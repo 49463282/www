@@ -1,0 +1,8 @@
+.idea
+node_modules
+logs/*
+!logs/pull.lock
+1writeInCookieConfig.js
+3autoWriteInShareCodeConfig.js
+package-lock.json
+docker-compose.yml

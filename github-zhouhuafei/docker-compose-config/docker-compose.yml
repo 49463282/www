@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./config/nginx/conf.d:/etc/nginx/conf.d
+      - ../../:/usr/share/nginx/html/www # bind mount 会清空容器内的文件，挂载宿主机的文件。
+  mongo:
+    container_name: mongo
+    image: mongo:latest
+    restart: always
+    volumes:
+      - mongo-data:/data/db # named volume 会把容器内的文件拷贝到宿主机上，同名文件以宿主机的为准。挂载位置一般在宿主机的 /var/lib/docker/volumes 目录里。
+    ports:
+      - 27017:27017
+  redis:
+    container_name: redis
+    image: redis:latest
+    restart: always
+    volumes:
+      - redis-data:/data
+    ports:
+      - 6379:6379
+volumes:
+  mongo-data:
+  redis-data:
+  mysql-data:

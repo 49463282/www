@@ -1,0 +1,43 @@
+jd_scripts:
+  image: lxk0301/jd_scripts
+  container_name: jd_scripts
+  restart: always
+  volumes:
+    - ./logs:/scripts/logs
+  tty: true
+  extra_hosts:
+    - "gitee.com:180.97.125.228"
+    - "github.com:13.229.188.59"
+    - "raw.githubusercontent.com:151.101.228.133"
+  environment:
+    - REPO_URL=git@gitee.com:lxk0301/jd_scripts.git
+    #微信server酱通
+    - PUSH_KEY=
+    #Bark App通知
+    - BARK_PUSH=
+    #telegram机器人通知
+    - TG_BOT_TOKEN=
+    - TG_USER_ID=
+    #钉钉机器人通知
+    - DD_BOT_TOKEN=
+    - DD_BOT_SECRET=
+    #是否开启debug模式打印日志-运行脚本时是否显示log-默认显示
+    - JD_DEBUG=
+    #如果设置了 RANDOM_DELAY_MAX ，则会启用随机延迟功能，延迟随机 0 到 RANDOM_DELAY_MAX-1 秒。如果不设置此项，则不使用延迟。
+    #并不是所有的脚本都会被启用延迟，因为有一些脚本需要整点触发。延迟的目的有两个，1是降低抢占cpu资源几率，2是降低检查风险（主要是1）
+    #填写数字，单位为秒，比如写为 RANDOM_DELAY_MAX=30  就是随机产生0到29之间的一个秒数，执行延迟的意思。
+    - RANDOM_DELAY_MAX=120
+    #宠汪汪的喂食数量-可以填0,10,20,40,80-默认10
+    - JOY_FEED_COUNT=
+    #宠汪汪帮好友喂食-默认false
+    - JOY_HELP_FEED=true
+    #宠汪汪赛跑自己账号内部互助-默认false
+    - JOY_RUN_HELP_MYSELF=true
+    #宠汪汪积分兑换多少京豆-可以填0,20,500-默认0不兑换
+    - JD_JOY_REWARD_NAME=20
+    #东东超市兑换多少数量的京豆-可以填0,20,1000或者其他奖品的文字-默认0不兑换
+    - MARKET_COIN_TO_BEANS=20
+    #摇钱树是否卖出金果兑换成金币-true卖出false不卖出-默认false
+    - MONEY_TREE_SELL_FRUIT=true
+    #多账号自动互助
+    - ENABLE_AUTO_HELP=true

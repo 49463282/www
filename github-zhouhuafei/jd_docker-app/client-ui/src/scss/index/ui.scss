@@ -1,0 +1,62 @@
+// 一般用于列表搜索块的通用样式
+.ui-search-header-block {
+  border-radius: 5px;
+  background: white;
+  position: relative;
+  padding-top: 10px;
+  padding-right: 110px;
+
+  &.dark {
+    background: #f5f7fc;
+  }
+
+  .btn-search {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+  }
+
+  .el-form-item--medium {
+    margin-bottom: 10px;
+  }
+}
+
+// 一般用于编辑页面底部的  取消、保存之类的按钮样式
+.ui-edit-btn-wrapper {
+  margin: 40px;
+  text-align: center;
+
+  .el-button {
+    padding: 14px 40px;
+    margin-right: 20px;
+  }
+}
+
+// tree-view
+.tree-view-item {
+  .tree-view-item-key {
+    color: #262626;
+  }
+
+  .tree-view-item-value {
+    &.tree-view-item-value-string {
+      color: #c82623;
+    }
+
+    &.tree-view-item-value-number {
+      color: #3f28d7;
+    }
+
+    &.tree-view-item-value-boolean {
+      color: #bf46aa;
+    }
+
+    &.tree-view-item-value-null {
+      color: #bf46aa;
+    }
+
+    &.tree-view-item-value-function {
+      color: #bf46aa;
+    }
+  }
+}

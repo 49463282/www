@@ -1,0 +1,18 @@
+@import "../config";
+
+// 边距、间距
+// 注：$spacers 列表可调整，但不应太长，以避免生成过多冗余类
+$direction: (t: top, r: right, b: bottom, l: left);
+$spacers: 1, 2, 5, 10, 15, 20, 30, 40, 50;
+@include spacing-gen($spacers, $direction);
+
+// 宽度工具类
+$widthList: 80, 100, 150, 200, 250, 300, 350, 400, 500, 600, 700, 1000;
+@include width-gen($widthList);
+
+// flex
+.flex-space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
