@@ -14,9 +14,10 @@ function fn () {
       if (key !== 'JD_COOKIE') {
         symbol = '@'
       }
-      if (index === 0) {
+      if (obj[key] === '') {
         symbol = ''
       }
+      if(key === 'DREAM_FACTORY_SHARE_CODES' && index === 2) obj[key] += `${symbol}8FjNuKs2BF7z4gWfHpavCw==@qxoeHk-B2Bgm_AFFhjzuOA==`
       if (key === 'JXNC_SHARECODES') { // 特殊处理-京喜农场-互助码与众不同
         // obj[key] += `${symbol}'${item[key]}'` // 但是在docker-compose里不需要特殊处理
         obj[key] += `${symbol}${item[key]}`
